@@ -14,8 +14,8 @@ jobs:
         with:
             node-version: 18
             cache: 'npm'
-      -  name: Install yarn
-         run: nmp yarn install
+      - name: Install yarn
+        run: nmp yarn install
       - name: Linting code
         uses: yarn lint       
         
