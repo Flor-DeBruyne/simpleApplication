@@ -18,17 +18,17 @@ export async function initialize() {
   }
 
   console.log('MongoDB database initialized');
-};
+}
 
 export async function close() {
   await client.close();
   client = null;
-};
+}
 
 export async function getAnimals() {
   const animals = await client.db().collection('animals').find().toArray() || [];
   return animals.map(({ id, name }) => ({ id, name }));
-};
+}
 
 export async function getAnimal(id) {
   const animal = await client.db().collection('animals').findOne({ id: id });
@@ -39,4 +39,4 @@ export async function getAnimal(id) {
     id: animal.id,
     name: animal.name,
   };
-};
+}
