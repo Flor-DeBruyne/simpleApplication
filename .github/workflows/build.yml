@@ -17,6 +17,6 @@ jobs:
       - name: Install yarn
         run: yarn install
       - name: Linting code
-        run: yarn lint       
+        run: yarn lint
+      - run: echo "This job's status is ${{ job.status }}."  
         
-
